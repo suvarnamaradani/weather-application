@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🌦 Weather App</h1>
+
+    <div class="main-layout">
+      <!-- Left side: search and loader -->
+      <div class="left-panel">
+        <input type="text" id="cityInput" placeholder="🔍 Search city..." />
+
+        <div class="btn-group">
+          <button onclick="getWeather()">🔎 Search</button>
+          <button onclick="getWeatherByLocation()">📍My Location</button>
+        </div>
+        
+
+
+        <button class="unit-toggle" onclick="toggleUnits()">🌡 Switch °C / °F</button>
+
+        <div id="loaderContainer" style="display: none;">
+          <svg class="svg-loader" width="50" height="50" viewBox="0 0 50 50">
+            <circle class="loader-ring" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+          </svg>
+          <p class="loader-text">Fetching Weather...</p>
+        </div>
+      </div>
+
+      <!-- Right side: result display -->
+      <div class="right-panel">
+        <div id="weatherInfo"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
